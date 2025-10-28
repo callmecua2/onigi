@@ -1,0 +1,10 @@
+.hero {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+}

@@ -1,0 +1,32 @@
+.review-section {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.review-title {
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.review-wrapper {
+    gap: 3em;
+}
+
+.review-wrapper h1 {
+    font-size: 30px;
+}
+
+.review-wrapper p {
+    font-size: 19px;
+}
+
+.card-review {
+     cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-review:hover {
+    transform: translateY(-1rem) scale(1.03);
+     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}

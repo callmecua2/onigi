@@ -1,0 +1,30 @@
+.image-contact-section {
+    display: grid;
+grid-template-columns: repeat(8, 1fr);
+grid-template-rows: repeat(8, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+
+}
+
+.card1{
+    grid-area: 2 / 2 / 7 / 8;
+    border-radius: 5%;
+}
+.image-card1{
+    border-radius: 5%;
+}
+
+.card2 {
+    grid-area: 4 / 5 / 8 / 9;
+        border-radius: 5%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+}
+
+
+
+.text-contact-section h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
