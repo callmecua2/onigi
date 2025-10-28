@@ -33,7 +33,7 @@ export default function Verify() {
       <div className="main w-full h-screen flex justify-center items-center flex-col">
         <div className="verify-wrapper w-1/3 h-1/2 flex justify-center items-center flex-col shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-4xl">
           <h1 className="text-4xl font-bold">
-            We've sent you verification code
+            We have sent you verification code
           </h1>
           <p className="text-2xl font-semibold">Please check your email</p>
           <form

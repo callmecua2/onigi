@@ -49,7 +49,7 @@ export default function User() {
   function CartEmpty() {
     return(
       <>
-        <h1>Opsss, there's no items in your cart</h1>
+        <h1>Opsss, there is no items in your cart</h1>
       </>
     )
   }
@@ -123,7 +123,7 @@ export default function User() {
                   alt="userImage1"
                 />
                 <h2 className="mt-5 text-2xl text-center font-semibold">Hello : Name</h2>
-
+                <button onClick={logout} className="w-[150px] h-[50px] cursor-pointer border-2 border-black mt-5">Logout</button>
               </div>
              
             </div>

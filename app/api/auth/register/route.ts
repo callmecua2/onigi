@@ -1,101 +1,7 @@
 export const runtime = 'nodejs'
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from 'nodemailer'
-import bcrypt from 'bcrypt'
 import { prisma } from "@/lib/prisma";
 
-
-// export async function sendTestEmail () {
-//     const testUser = await nodemailer.createTestAccount();
-
-
-//     const transporter = nodemailer.createTransport({
-//     host: "smtp.ethereal.email",
-//     port: 587,
-//     auth: {
-//       user: testUser.user,
-//       pass: testUser.pass,
-//     },
-//   });
-
-// const info = await transporter.sendMail({
-//     from: `"Portfolio App" <${testUser.user}>`,
-//     to: "demo@example.com", 
-//     subject: "Test Email from Ethereal",
-//     html: `
-//       <h3>Halo 👋</h3>
-//       <p>Ini contoh email testing via Ethereal.</p>
-//       <p><b>Tidak benar-benar dikirim ke penerima asli</b>.</p>
-//     `,
-//   });
-
-
-//   console.log("Email berhasil dikirim (simulasi).");
-//   console.log("Preview di sini:", nodemailer.getTestMessageUrl(info));
-
-// }
-
-// export async function GET(req: Request) {
-//   try {
-//     const testUser = await nodemailer.createTestAccount();
-
-//     const transporter = nodemailer.createTransport({
-//     host: "smtp.ethereal.email",
-//     port: 587,
-//     auth: {
-//       user: testUser.user,
-//       pass: testUser.pass,
-//     },
-//   });
-
-// const info = await transporter.sendMail({
-//     from: `"Portfolio App" <${testUser.user}>`,
-//     to: "demo@example.com", 
-//     subject: "Test Email from Ethereal",
-//     html: `
-//       <h3>Halo 👋</h3>
-//       <p>Ini contoh email testing via Ethereal.</p>
-//       <p><b>Tidak benar-benar dikirim ke penerima asli</b>.</p>
-//     `,
-//   });
-
-
-//   console.log("Email berhasil dikirim (simulasi).");
-//   console.log("Preview di sini:", nodemailer.getTestMessageUrl(info));
-
-
-
-//   } catch (error) {
-//     console.log(`Error Message : ${error}`)
-//     return NextResponse.json(
-//       {message: `Error message : ${error}`},
-//       {status: 500}
-//     )
-//   }
-// }
-
-
-
-// export async function GET() {
-//   try {
-
-//     const otp = Math.floor(100000 + Math.random() * 900000).toString();
-//     console.log(ranNum)
-//     return NextResponse.json(
-//       {randomnumber: ranNum},
-//       {status: 201}
-//     )
-
-//   } catch (error) {
-//     console.log(error)
-//     return NextResponse.json(
-//       {message: `Error : ${error}`},
-//       {status: 501}
-//     )
-//   }
-
-
-// }
 
 
 export async function POST(req: NextRequest) {
@@ -114,15 +20,6 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // const user = await prisma.user.create({
-    //   data : {
-    //     name,
-    //     email,
-    //     password,
-    //   }
-    // })
-
-
     const tempuser = await prisma.tempUser.create({
       data: {
         name,
@@ -131,6 +28,8 @@ export async function POST(req: NextRequest) {
         OTP: otp
       }
     })
+
+    console.log(`Temporary user created: ${tempuser.email}`);
 
 
     const response = NextResponse.json(

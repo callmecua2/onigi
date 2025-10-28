@@ -1,9 +1,6 @@
 'use client'
 
 import Allmenu from "@/PageComponents/Allmenu"
-import Bestmenu from "@/PageComponents/BestMenu"
-import Baverages from "@/PageComponents/Baverages"
-import Dessert from "@/PageComponents/Dessert"
 
 
 export default function Menu () {

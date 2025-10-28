@@ -14,15 +14,15 @@ import { useParams } from "next/navigation";
 export default function MenuPage() {
 
   const { id } = useParams()
-  
+  const { addToCart } = useCart();
+
   const filtermenu = dishesMenu.find(
     (menu) => menu.id.toString() === id
   );
-  if (!filtermenu) return <div className="p-8">Menu not found</div>;
-
-  const { addToCart } = useCart();
-
   
+
+
+  if (!filtermenu) return <div className="p-8">Menu not found</div>;
 
   return (
     <div className="cart-body">
@@ -33,7 +33,7 @@ export default function MenuPage() {
               className="w-72 h-48 object-cover"
               src="https://images.unsplash.com/photo-1657560566744-06d0b69f6647?q=80&w=600&auto=format&fit=crop"
               alt="image"
-            />{" "}
+            />
           </div>
         </div>
         <div className="product-description">
@@ -69,13 +69,3 @@ export default function MenuPage() {
     </div>
   );
 }
-// <div className="p-8 w-[350px] h-96 ">
-//   <img
-//       className="w-72 h-48 object-cover"
-//       src="https://images.unsplash.com/photo-1657560566744-06d0b69f6647?q=80&w=600&auto=format&fit=crop"
-//       alt="image"
-//     />
-//   <h1 className="text-3xl font-bold mt-6">{filtermenu.name}</h1>
-//   <p className="text-gray-600 mt-3">{filtermenu.description}</p>
-//   <p className="text-2xl font-semibold mt-4">${filtermenu.price}</p>
-// </div>
